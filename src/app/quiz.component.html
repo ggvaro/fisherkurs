@@ -1,11 +1,45 @@
-<div *ngIf="question">
-  <h2>Question:</h2>
-  <p>{{ question.number }}.   {{ question.question }}</p>
-  <button (click)="showAnswer = true" *ngIf="!showAnswer">Show Answer</button>
-  <p *ngIf="showAnswer"><strong>Answer:</strong> {{ question.answer }}</p>
-  <button (click)="nextQuestion()">Next Question</button>
+<div class="quiz-layout">
+  <!-- Sidebar: range selector -->
+  <aside class="sidebar">
+    <h3>Range Selector</h3>
+    <label>
+      From:
+      <input type="number" [(ngModel)]="startNumber" min="1">
+    </label>
+    <label>
+      To:
+      <input type="number" [(ngModel)]="endNumber" [min]="startNumber || 1">
+    </label>
+    <button (click)="applyRange()">Apply Range</button>
+    <button (click)="resetQuiz()">Reset Full Quiz</button>
+  </aside>
+
+  <!-- Main: active question -->
+  <main class="quiz-main" *ngIf="question">
+    <p><strong>Progress:</strong> Question {{ currentIndex }} / {{ questions.length }}</p>
+    <h2>Question:</h2>
+    <p>{{ question.number }}. {{ question.question }}</p>
+
+    <button (click)="showAnswer = true" *ngIf="!showAnswer">Show Answer</button>
+    <p *ngIf="showAnswer"><strong>Answer:</strong> {{ question.answer }}</p>
+
+    <button (click)="nextQuestion()">Next Question</button>
+  </main>
+
+  <main class="quiz-main" *ngIf="!question && questions.length > 0">
+    <p>All selected questions have been reviewed.</p>
+    <button (click)="applyRange()">Restart Range</button>
+  </main>
+
+  <!-- Footer: list of all questions -->
+  <section class="question-list" *ngIf="questions.length > 0">
+    <h3>Questions in this set</h3>
+    <ul>
+      <li *ngFor="let q of questions; let i = index"
+          [ngClass]="getQuestionStatus(i)">
+        {{ q.number }}. {{ q.question }}
+      </li>
+    </ul>
+  </section>
 </div>
-<div *ngIf="!question">
-  <p>All questions have been reviewed, reset the quiz...</p>
-  <button (click)="showAnswer = true" *ngIf="!showAnswer">Reset</button>
-</div>
+

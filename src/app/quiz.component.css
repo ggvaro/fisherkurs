@@ -1,87 +1,164 @@
-/* --- colorful, plain-HTML quiz CSS --- */
+/* --- Colorful Quiz Theme --- */
 :root{
   --primary-1:#2563eb;   /* blue */
   --primary-2:#4f46e5;   /* indigo */
+  --accent:#f97316;      /* orange for spice */
+  --success:#22c55e;
+  --danger:#ef4444;
   --text:#0f172a;        /* near-black */
   --muted:#475569;       /* slate */
-  --card:#ffffff;
+  --card:#8747bf;
   --page:#f6f7fb;
 }
 
-*{ box-sizing:border-box; }
+/* global reset */
+*{ box-sizing:border-box; margin:0; padding:0; }
 body{
-  margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif;
   background: var(--page);
   color: var(--text);
+  line-height:1.6;
+
+  /* Elegant subtle background pattern */
+  background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,.05) 1px, transparent 0);
+  background-size: 24px 24px;
 }
 
-/* your quiz container */
-div{
-  margin:3rem auto;
-  max-width:600px;
-  text-align:center;
+/* container */
+.quiz-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* sidebar */
+.sidebar {
   background: var(--card);
-  padding:2rem;
-  border-radius:16px;
-  box-shadow:0 12px 28px rgba(0,0,0,.12);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+.sidebar h3 {
+  color: var(--primary-2);
+  margin-bottom: .75rem;
+  font-weight: 700;
 }
 
-/* colorful title */
+/* main card */
+.quiz-main {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+  text-align: center;
+}
+
+/* gradient title */
 h2{
-  margin:0 0 1rem;
-  font-size:1.9rem;
-  font-weight:800;
-  background: linear-gradient(90deg,#f97316,#2563eb,#22c55e);
+  margin-bottom: 1rem;
+  font-size: 1.9rem;
+  font-weight: 800;
+  background: linear-gradient(90deg,var(--accent),var(--primary-1),var(--success));
   -webkit-background-clip:text;
   background-clip:text;
-  color: transparent;               /* actual gradient text */
+  color: transparent;
 }
 
-/* readable body text with a bit of color */
+/* colorful section headers */
+h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-1);
+  margin-bottom: .75rem;
+}
+
+/* text */
 p{
   font-size:1.125rem;
-  line-height:1.6;
   color: var(--muted);
   margin:1rem 0 1.5rem;
 }
-p b, p strong{ color: var(--primary-1); }
-p em, p i{ color:#7c3aed; font-style: normal; }
+p strong{ color: var(--primary-1); }
 
-/* buttons: solid gradient + guaranteed visible text */
+/* buttons */
 button{
   display:inline-block;
   margin:.5rem;
   padding:.8rem 1.4rem;
   font-size:1rem;
   font-weight:700;
-  letter-spacing:.2px;
   border:0;
   border-radius:12px;
   background-image: linear-gradient(135deg, var(--primary-1), var(--primary-2));
-  color:#231686 !important;            /* ensure text shows */
-  text-shadow:0 1px 0 rgba(0,0,0,.25);
+  color:#820e9f;
   cursor:pointer;
   box-shadow:0 8px 20px rgba(79,70,229,.35);
   transition: transform .12s ease, filter .2s ease, box-shadow .2s ease;
 }
-button:hover{ transform: translateY(-1px); filter: brightness(1.07); }
-button:active{ transform: translateY(0); filter: brightness(.98); }
-button:focus-visible{ outline:3px solid #9ec9ff; outline-offset:2px; }
+button:hover{ transform: translateY(-2px); filter: brightness(1.07); }
+button:active{ transform: translateY(0); filter: brightness(.95); }
+button:focus-visible{ outline:3px solid #390458; outline-offset:2px; }
 
-/* OPTIONAL variants if you ever add a class later (won’t break plain HTML) */
 button.success{ background-image:linear-gradient(135deg,#16a34a,#22c55e); }
 button.danger{  background-image:linear-gradient(135deg,#dc2626,#ef4444); }
-button.outline{
-  background:#fff; color:var(--primary-2) !important;
-  border:2px solid var(--primary-2);
-  box-shadow:none; text-shadow:none;
+
+/* --- Question List --- */
+.question-list {
+  grid-column: 1 / -1; /* full width */
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
 }
 
-/* mobile tweaks */
-@media (max-width:480px){
-  div{ margin:1.5rem auto; padding:1.25rem; }
-  h2{ font-size:1.6rem; }
-  p{ font-size:1rem; }
-  button{ width:100%; max-width:320px; }
+.question-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: .75rem;
+}
+
+/* base question style */
+.question-list li {
+  padding: .75rem 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all .25s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,.06);
+}
+
+/* asked (already shown) */
+.question-list li.asked {
+  background: linear-gradient(135deg,#f3f4f6,#e5e7eb);
+  color: #9ca3af;
+  border-left: 6px solid var(--muted);
+  opacity: 0.85;
+}
+
+/* active (current) */
+.question-list li.active {
+  background: linear-gradient(135deg, var(--primary-1), var(--primary-2));
+  color: #fff;
+  font-weight: 700;
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(79,70,229,.4);
+  border-left: 6px solid var(--accent);
+}
+
+/* upcoming (not yet shown) */
+.question-list li.upcoming {
+  background: #fff;
+  color: var(--text);
+  border-left: 6px solid transparent;
+}
+.question-list li.upcoming:hover {
+  border-left: 6px solid var(--primary-1);
+  background: linear-gradient(90deg,#f8fafc,#ffffff);
+  transform: translateX(4px);
 }
