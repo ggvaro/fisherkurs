@@ -1,0 +1,87 @@
+/* --- colorful, plain-HTML quiz CSS --- */
+:root{
+  --primary-1:#2563eb;   /* blue */
+  --primary-2:#4f46e5;   /* indigo */
+  --text:#0f172a;        /* near-black */
+  --muted:#475569;       /* slate */
+  --card:#ffffff;
+  --page:#f6f7fb;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif;
+  background: var(--page);
+  color: var(--text);
+}
+
+/* your quiz container */
+div{
+  margin:3rem auto;
+  max-width:600px;
+  text-align:center;
+  background: var(--card);
+  padding:2rem;
+  border-radius:16px;
+  box-shadow:0 12px 28px rgba(0,0,0,.12);
+}
+
+/* colorful title */
+h2{
+  margin:0 0 1rem;
+  font-size:1.9rem;
+  font-weight:800;
+  background: linear-gradient(90deg,#f97316,#2563eb,#22c55e);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color: transparent;               /* actual gradient text */
+}
+
+/* readable body text with a bit of color */
+p{
+  font-size:1.125rem;
+  line-height:1.6;
+  color: var(--muted);
+  margin:1rem 0 1.5rem;
+}
+p b, p strong{ color: var(--primary-1); }
+p em, p i{ color:#7c3aed; font-style: normal; }
+
+/* buttons: solid gradient + guaranteed visible text */
+button{
+  display:inline-block;
+  margin:.5rem;
+  padding:.8rem 1.4rem;
+  font-size:1rem;
+  font-weight:700;
+  letter-spacing:.2px;
+  border:0;
+  border-radius:12px;
+  background-image: linear-gradient(135deg, var(--primary-1), var(--primary-2));
+  color:#231686 !important;            /* ensure text shows */
+  text-shadow:0 1px 0 rgba(0,0,0,.25);
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(79,70,229,.35);
+  transition: transform .12s ease, filter .2s ease, box-shadow .2s ease;
+}
+button:hover{ transform: translateY(-1px); filter: brightness(1.07); }
+button:active{ transform: translateY(0); filter: brightness(.98); }
+button:focus-visible{ outline:3px solid #9ec9ff; outline-offset:2px; }
+
+/* OPTIONAL variants if you ever add a class later (won’t break plain HTML) */
+button.success{ background-image:linear-gradient(135deg,#16a34a,#22c55e); }
+button.danger{  background-image:linear-gradient(135deg,#dc2626,#ef4444); }
+button.outline{
+  background:#fff; color:var(--primary-2) !important;
+  border:2px solid var(--primary-2);
+  box-shadow:none; text-shadow:none;
+}
+
+/* mobile tweaks */
+@media (max-width:480px){
+  div{ margin:1.5rem auto; padding:1.25rem; }
+  h2{ font-size:1.6rem; }
+  p{ font-size:1rem; }
+  button{ width:100%; max-width:320px; }
+}

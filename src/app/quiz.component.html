@@ -1,0 +1,11 @@
+<div *ngIf="question">
+  <h2>Question:</h2>
+  <p>{{ question.number }}.   {{ question.question }}</p>
+  <button (click)="showAnswer = true" *ngIf="!showAnswer">Show Answer</button>
+  <p *ngIf="showAnswer"><strong>Answer:</strong> {{ question.answer }}</p>
+  <button (click)="nextQuestion()">Next Question</button>
+</div>
+<div *ngIf="!question">
+  <p>All questions have been reviewed, reset the quiz...</p>
+  <button (click)="showAnswer = true" *ngIf="!showAnswer">Reset</button>
+</div>
