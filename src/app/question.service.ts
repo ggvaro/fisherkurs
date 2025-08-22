@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 export interface Question {
   question: string;
   answer: string;
-  number: number
+  number: number;
+  userAnswerStatus?: 'correct' | 'incorrect'; // ✅ Added for tracking accuracy
 }
 
 @Injectable({ providedIn: 'root' })

@@ -23,12 +23,18 @@
     <button (click)="showAnswer = true" *ngIf="!showAnswer">Show Answer</button>
     <p *ngIf="showAnswer"><strong>Answer:</strong> {{ question.answer }}</p>
 
-    <button (click)="nextQuestion()">Next Question</button>
+    <div class="answer-buttons">
+      <button (click)="markCorrect()">✅ I got it right</button>
+      <button (click)="markIncorrect()">❌ I got it wrong</button>
+    </div>
   </main>
 
+  <!-- Main: quiz completed -->
   <main class="quiz-main" *ngIf="!question && questions.length > 0">
-    <p>All selected questions have been reviewed.</p>
+    <h3>Quiz Completed</h3>
+    <p>You answered <strong>{{ getScore() }}</strong> correctly.</p>
     <button (click)="applyRange()">Restart Range</button>
+    <button (click)="resetQuiz()">Reset Full Quiz</button>
   </main>
 
   <!-- Footer: list of all questions -->
@@ -38,8 +44,9 @@
       <li *ngFor="let q of questions; let i = index"
           [ngClass]="getQuestionStatus(i)">
         {{ q.number }}. {{ q.question }}
+        <span *ngIf="q.userAnswerStatus === 'correct'">✅</span>
+        <span *ngIf="q.userAnswerStatus === 'incorrect'">❌</span>
       </li>
     </ul>
   </section>
 </div>
-

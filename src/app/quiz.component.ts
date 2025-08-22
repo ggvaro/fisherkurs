@@ -40,14 +40,11 @@ export class QuizComponent implements OnInit {
   }
 
   applyRange() {
-    if (this.startNumber !== null && this.endNumber !== null) {
-      const filtered = this.allQuestions.filter(
-        q => q.number >= this.startNumber! && q.number <= this.endNumber!
-      );
-      this.questions = this.shuffle([...filtered]);
-    } else {
-      this.questions = this.shuffle([...this.allQuestions]);
-    }
+    const filtered = this.startNumber !== null && this.endNumber !== null
+      ? this.allQuestions.filter(q => q.number >= this.startNumber! && q.number <= this.endNumber!)
+      : [...this.allQuestions];
+
+    this.questions = this.shuffle(filtered);
     this.currentIndex = 0;
     this.nextQuestion();
   }
@@ -58,21 +55,43 @@ export class QuizComponent implements OnInit {
       this.currentIndex++;
       this.showAnswer = false;
     } else {
-      this.question = null; // all done
+      this.question = null;
     }
   }
 
   resetQuiz() {
     this.questions = this.shuffle([...this.allQuestions]);
     this.currentIndex = 0;
+    this.questions.forEach(q => delete q.userAnswerStatus); // Clear previous answers
     this.nextQuestion();
     this.showAnswer = false;
   }
 
-  /** Returns CSS class for a question based on its progress status */
+  markCorrect() {
+    if (this.question) {
+      this.question.userAnswerStatus = 'correct';
+      this.nextQuestion();
+    }
+  }
+
+  markIncorrect() {
+    if (this.question) {
+      this.question.userAnswerStatus = 'incorrect';
+      this.nextQuestion();
+    }
+  }
+
   getQuestionStatus(index: number): string {
+    const q = this.questions[index];
+    if (q.userAnswerStatus === 'correct') return 'correct';
+    if (q.userAnswerStatus === 'incorrect') return 'incorrect';
     if (index < this.currentIndex - 1) return 'asked';
     if (index === this.currentIndex - 1) return 'active';
     return 'upcoming';
+  }
+
+  getScore(): string {
+    const correct = this.questions.filter(q => q.userAnswerStatus === 'correct').length;
+    return `${correct} / ${this.questions.length}`;
   }
 }
