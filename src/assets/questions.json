@@ -15,13 +15,13 @@
     "number": "3"
   },
   {
-    "question": "Dorf in Fischaufstiegshilfen geangelt werden?",
+    "question": "Darf in Fischaufstiegshilfen geangelt werden?",
     "answer": "Nein",
     "number": "4"
   },
   {
     "question": "Fur welche Wassertiere gibt es Schonzeiten und BrittelmaBe?",
-    "answer": "Fur alle in der NO Fischereiverordnung angefOhrten Wassertiere",
+    "answer": "Fur alle in der NÖ Fischereiverordnung angeführten Wassertiere",
     "number": "5"
   },
   {
@@ -30,57 +30,57 @@
     "number": "6"
   },
   {
-    "question": "Dorf man sich einen Hecht mit 45 cm im Mai aneignen?",
+    "question": "Darf man sich einen Hecht mit 45 cm im Mai aneignen?",
     "answer": "Nein",
     "number": "7"
   },
   {
-    "question": "Dorf man sich einen Huchen mit 76 cm im Mai aneignen?",
+    "question": "darf man sich einen Huchen mit 76 cm im Mai aneignen?",
     "answer": "Nein",
     "number": "8"
   },
   {
-    "question": "Dorf man sich einen Waller/Weis mit 75 cm im Juli aneignen?",
+    "question": "darf man sich einen Waller/Weis mit 75 cm im Juli aneignen?",
     "answer": "Jo",
     "number": "9"
   },
   {
-    "question": "Dorf man sich einen Zander mit 38 cm im November aneignen?",
+    "question": "darf man sich einen Zander mit 38 cm im November aneignen?",
     "answer": "Jo",
     "number": "10"
   },
   {
-    "question": "Dorf man sich eine Asche mit 35 cm im Juni aneignen?",
+    "question": "darf man sich eine Asche mit 35 cm im Juni aneignen?",
     "answer": "Jo",
     "number": "11"
   },
   {
-    "question": "Dorf man sich eine Asche mit 35 cm im Marz aneignen?",
+    "question": "darf man sich eine Asche mit 35 cm im Marz aneignen?",
     "answer": "Nein",
     "number": "12"
   },
   {
-    "question": "Dorf man sich eine Bachforelle mit 24 cm im April aneignen?",
+    "question": "darf man sich eine Bachforelle mit 24 cm im April aneignen?",
     "answer": "Nein",
     "number": "13"
   },
   {
-    "question": "Dorf man sich eine Barbe mit einer Lange von 35 cm im Juli aneignen?",
+    "question": "darf man sich eine Barbe mit einer Lange von 35 cm im Juli aneignen?",
     "answer": "Jo",
     "number": "14"
   },
   {
-    "question": "Dorf man sich eine Elritze mit 12 cm im Juli aneignen?",
+    "question": "darf man sich eine Elritze mit 12 cm im Juli aneignen?",
     "answer": "Jo",
     "number": "15"
   },
   {
-    "question": "Dorf man sich eine Koppe mit 12 cm im April aneignen?",
+    "question": "darf man sich eine Koppe mit 12 cm im April aneignen?",
     "answer": "Nein",
     "number": "16"
   },
   {
-    "question": "Dorf man sich eine Guster mit 25 cm im August aneignen?",
+    "question": "darf man sich eine Guster mit 25 cm im August aneignen?",
     "answer": "Jo",
     "number": "17"
   },
@@ -90,7 +90,7 @@
     "number": "19"
   },
   {
-    "question": "Dorf ein Fischereiaufseher die Herausgabe widerrechtlich gefangener Fische verlangen?",
+    "question": "darf ein Fischereiaufseher die Herausgabe widerrechtlich gefangener Fische verlangen?",
     "answer": "Jo",
     "number": "20"
   },
@@ -130,7 +130,7 @@
     "number": "27"
   },
   {
-    "question": "Dorf ein Angler UfergrundstOcke betreten?",
+    "question": "darf ein Angler UfergrundstOcke betreten?",
     "answer": "Grundsatzlich ja, aber es muss in AusObung der Fischerei sein",
     "number": "28"
   },
@@ -150,7 +150,7 @@
     "number": "31"
   },
   {
-    "question": "Dorf ein Fanggerat dos mit Angeln (Haken) versehen ist, ohne Beisein des Fischers ausgelegt werden?",
+    "question": "darf ein Fanggerat dos mit Angeln (Haken) versehen ist, ohne Beisein des Fischers ausgelegt werden?",
     "answer": "Nein",
     "number": "32"
   },
@@ -175,12 +175,12 @@
     "number": "37"
   },
   {
-    "question": "Dorf sich ein Fischer alle gefangenen Fische und Krustentiere aneignen?",
+    "question": "darf sich ein Fischer alle gefangenen Fische und Krustentiere aneignen?",
     "answer": "Nein, die Anzahl richtet sich nach der Fischereiordnung des jeweiligen Reviers. In der Schonzeit oder unter dem BrittelmaB gefangene Wassertiere mussen vorsichtig ins Wasser zuruckgesetzt werden",
     "number": "38"
   },
   {
-    "question": "Dorf sich ein Fischer Neunaugen aneignen?",
+    "question": "darf sich ein Fischer Neunaugen aneignen?",
     "answer": "Nein, Neunaugen sind ganzjahrig geschont",
     "number": "39"
   },
@@ -245,7 +245,7 @@
     "number": "51"
   },
   {
-    "question": "Dorf eine Flussperlmuschel entnommen werden?",
+    "question": "darf eine Flussperlmuschel entnommen werden?",
     "answer": "Nein, es ist verboten",
     "number": "52"
   },
@@ -270,7 +270,7 @@
     "number": "56"
   },
   {
-    "question": "DOrfen Fische als Kader verwendet werden?",
+    "question": "darfen Fische als Kader verwendet werden?",
     "answer": "Nur in totem Zustand",
     "number": "58"
   },
@@ -305,7 +305,7 @@
     "number": "64"
   },
   {
-    "question": "DOrfen Sie eine Lizenz an eine andere Person Obertragen?",
+    "question": "darfen Sie eine Lizenz an eine andere Person Obertragen?",
     "answer": "Nein",
     "number": "65"
   },
@@ -331,26 +331,26 @@
   },
   {
     "question": "Brauchen Sie die Zustimmung des FischereiausObungsberechtigten, um Fischnahrtiere aus einem Fischwosser zu\nentnehmen?",
-    "answer": "Fischnahrtiere unterliegen dem Geltungsbereich des NO Fischereigesetzes 2001 und dOrfen nur mit Zustimmung des FischereiausObungs\nberechtigten entnommen werden",
+    "answer": "Fischnahrtiere unterliegen dem Geltungsbereich des NO Fischereigesetzes 2001 und darfen nur mit Zustimmung des FischereiausObungs\nberechtigten entnommen werden",
     "number": "70"
   },
   {
-    "question": "Dorf der EigentOmer eines Fischwassers (Beispiel: umzaunter Schottersee) Wasserpflanzen durch Aussetzen von\nGraskarpfen (Amur) bekampfen?",
+    "question": "darf der EigentOmer eines Fischwassers (Beispiel: umzaunter Schottersee) Wasserpflanzen durch Aussetzen von\nGraskarpfen (Amur) bekampfen?",
     "answer": "Nein, er braucht jedenfalls die Bewilligung des NO Landesfischereiverbandes",
     "number": "71"
   },
   {
-    "question": "Dorf ein 12 Jahre alter Fischergast alleine die Fischerei ausOben?",
-    "answer": "UnmOndige benatigen eine Lizenz und dOrfen nur unter Aufsicht und Anwesenheit einer volljahrigen Person fischen, die selbst gOltige\nFischereidokumente mit sich fOhrt",
+    "question": "darf ein 12 Jahre alter Fischergast alleine die Fischerei ausOben?",
+    "answer": "UnmOndige benatigen eine Lizenz und darfen nur unter Aufsicht und Anwesenheit einer volljahrigen Person fischen, die selbst gOltige\nFischereidokumente mit sich fOhrt",
     "number": "72"
   },
   {
-    "question": "DOrfen Sie in Teichen, die zur landwirtschaftlich- tierzOchterischen Produktion von Speisefischen verwendet\nwerden, mit einer Harpune fischen?",
+    "question": "darfen Sie in Teichen, die zur landwirtschaftlich- tierzOchterischen Produktion von Speisefischen verwendet\nwerden, mit einer Harpune fischen?",
     "answer": "Nein, dos Verbot des Fischens mit Harpune gilt ouch hier",
     "number": "73"
   },
   {
-    "question": "Dorf der FischereiausObungsberechtigte jeder Person eine Fischergastkarte ausstellen?",
+    "question": "darf der FischereiausObungsberechtigte jeder Person eine Fischergastkarte ausstellen?",
     "answer": "Nein, der Fischergast muss dem Fischerei- ausObungsberechtigten seine fischereifachliche Eignung glaubhaft machen",
     "number": "75"
   },

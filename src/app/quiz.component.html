@@ -43,7 +43,7 @@
     <ul>
       <li *ngFor="let q of questions; let i = index"
           [ngClass]="getQuestionStatus(i)">
-        {{ q.number }}. {{ q.question }}
+        {{ q.number }}. {{ q.question }}. {{ q.answer }}
         <span *ngIf="q.userAnswerStatus === 'correct'">✅</span>
         <span *ngIf="q.userAnswerStatus === 'incorrect'">❌</span>
       </li>
